@@ -1,0 +1,9 @@
+title = getTitle();
+run("Colour Deconvolution", "vectors=[H DAB]");
+selectWindow(title + "-(Colour_1)");
+close();
+selectWindow(title + "-(Colour_3)");
+close();
+selectWindow(title + "-(Colour_2)");
+run("Auto Threshold", "method=RenyiEntropy white");
+
