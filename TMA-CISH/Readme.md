@@ -48,7 +48,7 @@ This scala scripts contains the main body of the RISMAN pipeline. It receives th
 
 1. Make a mask of deconvoluted brown channel. There is a MATLAB script called directly in Anduril pipeline to make a mask of deconvoluted channel for quantification step. (mask.sh, mask_fun.m, mask_run.m functions are being called in this step)
 
-2.Cleaning demultiplexing artifacts. This step applies cleaning demultiplexing artifacts automatically from the original TMA using the resynthesizer textural synthesis plug-in in GNU Image Manipulation Program. The steps are written in “inpainting.py” in python-fu scripting language, which allows fully automatic batch processing for each TMA spot in the analysis. 
+2. Cleaning demultiplexing artifacts. This step applies cleaning demultiplexing artifacts automatically from the original TMA using the resynthesizer textural synthesis plug-in in GNU Image Manipulation Program. The steps are written in “inpainting.py” in python-fu scripting language, which allows fully automatic batch processing for each TMA spot in the analysis. 
 
 
 3. Cell segmentation . The pipeline calls CellProfiler software and the saved segment.cpproj in which the non-default parameters for the images in analysis were determined experimentally. (segment.cpproj and segment.sh are called in this step)
