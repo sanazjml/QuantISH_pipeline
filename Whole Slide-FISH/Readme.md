@@ -1,4 +1,4 @@
-## QuantISH: RNA in situ hybridization image analysis pipeline (Whole slide)
+## QuantISH: RNA in situ hybridization image analysis pipeline (Whole slide images)
 
 This repository contains the image analysis pipeline introduced in paper “RNA in situ hybridization image analysis reveals target RNA quantification and survival associated expression variability in high grade serous ovarian cancer”. 
 
