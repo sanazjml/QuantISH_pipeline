@@ -1,28 +1,28 @@
 ## QuantISH: RNA in situ hybridization image analysis pipeline (Whole slide images)
 
-This repository contains the image analysis pipeline introduced in paper “RNA in situ hybridization image analysis reveals target RNA quantification and survival associated expression variability in high grade serous ovarian cancer”. 
+This repository contains the image analysis pipeline introduced in paper “QuantISH: RNA in situ hybridization image analysis pipeline to quantify cell type-specific target RNA expression and variability in tissue samples”.
 
-QuantISH is a comprehensive image analysis pipeline for RNA in situ hybridization images which quantifies target RNAs in individual cells and patients. The pipeline is capable of analyzing Tissue Microarray (TMA) and Whole Slide images either with chromogenic or immunofluorescence signals efficiently. 
+QuantISH is a comprehensive image analysis pipeline for RNA in situ hybridization images which quantifies target RNAs in individual cells and patients. The pipeline is capable of quantifying chromogenic vs (immunofluorescence) and Tissue Microarray (TMA) vs Whole Slide images efficiently.
+ 
 
+### Software requirements: 
+Matlab  
+Python  
+CaseViewer  
+CellProfiler software (version 3.1.8)  
+Anduril2   
 
-Software requirements: 
-Matlab
-Python
-CaseViewer
-CellProfiler software (version 3.1.8)
-Anduril2 
-
-Getting Started 
+### Getting Started 
 Make sure that the required softwared are installed on your computer. Besides, as the pipline exploits the parallelisation in Anduril2 as a workflow platform for analyzing large data sets, you can install the Anduril on your own computer using instructions available in “https://www.anduril.org”. 
 
-Pre-processing
--Caseviewer
+## Pre-processing
+### Caseviewer
 We have used CaseViewer software to read the MRXS immunoflorescence image, and separate its different channels as DAPI staining, and fluorescein (FITC 38 HE), Cyanine 3 (TRITC 48 HE), and Cyanine 5 (Cy5) channels for each target RNA to be quantified. The output will be saved as tiff format images. 
 
 
-Main analysis
+## Main analysis
 
--pipeline.scala
+### pipeline.scala
 
 This scala scripts contains the main body of the QuantISH pipeline. It receives the DAPI statining and three separated channles of whole slide image as inputs, and implements other downstream steps as follows:
 
