@@ -1,6 +1,6 @@
 
 #' Otsu's thresholding
-#' 
+#' author : Antti Häkkinen 
 #' @param x A vector of data values.
 #' @param w A compatible vector of sample weights.
 #' @return Threshold t such that the classes are x>t.
