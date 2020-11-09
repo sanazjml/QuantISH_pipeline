@@ -1,5 +1,5 @@
 ## QuantISH: RNA in situ hybridization image analysis pipeline (TMA)
-This repository contains the image analysis pipeline introduced in paper "QuantISH: RNA in situ hybridization image analysis pipeline to quantify cell type-specific target RNA expression and variability in tissue samples".
+This repository contains the image analysis pipeline introduced in paper “QuantISH: RNA in situ hybridization image analysis pipeline to quantify cell type-specific target RNA expression and variability in tissue samples”.  
 
 Here is the TMA-CISH version of pipeline which quantifies cell type-specific target RNA in chromogenic tissue microarray images. 
 
