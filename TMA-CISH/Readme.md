@@ -1,5 +1,5 @@
 ## QuantISH: RNA in situ hybridization image analysis pipeline (TMA)
-This repository contains the image analysis pipeline introduced in paper “QuantISH: RNA in situ hybridization image analysis pipeline to quantify cell type-specific target RNA expression and variability in tissue samples”.
+This repository contains the image analysis pipeline introduced in paper "QuantISH: RNA in situ hybridization image analysis pipeline to quantify cell type-specific target RNA expression and variability in tissue samples".
 
 Here is the TMA-CISH version of pipeline which quantifies cell type-specific target RNA in chromogenic tissue microarray images. 
 
@@ -13,7 +13,7 @@ GNU Image Manipulation Program (Gimp) software (version 2.8)
 Anduril2     
 
 ### Getting Started 
-Make sure that the required softwared are installed on your computer. Besides, as the main pipline exploits the parallelisation in Anduril2 as a workflow platform for analyzing large data sets, you can install the Anduril on your own computer using instructions available in “https://www.anduril.org”. 
+Make sure that the required softwared are installed on your computer. Besides, as the main pipline exploits the parallelisation in Anduril2 as a workflow platform for analyzing large data sets, you can install the Anduril on your own computer using instructions available in "https://www.anduril.org". 
 
 ## Pre-processing
 #### 1. mrxsdump.py
