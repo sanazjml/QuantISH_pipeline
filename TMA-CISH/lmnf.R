@@ -1,5 +1,5 @@
 
-#
+# author: Antti Häkkinen
 # lmnf -- Linear models for nested factor models 
 #   This fits & compares large nested multifactor models when lm() fails
 #
