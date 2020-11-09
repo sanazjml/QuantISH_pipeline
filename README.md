@@ -4,11 +4,11 @@ This repository contains the image analysis pipeline introduced in paper “Quan
 
 QuantISH is a comprehensive image analysis pipeline for RNA in situ hybridization images which quantifies target RNAs in individual cells and patients. The pipeline is capable of quantifying chromogenic vs (immunofluorescence) and Tissue Microarray (TMA) vs Whole Slide images efficiently.
 
-# Contributors
+## Contributors
 Sanaz Jamalzadeh   
 Antti Häkkinen
 
-# Cite
+## Cite
 To cite this software use 
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4264098.svg)](https://doi.org/10.5281/zenodo.4264098)
