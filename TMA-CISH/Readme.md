@@ -13,7 +13,7 @@ GNU Image Manipulation Program (Gimp) software (version 2.8)
 Anduril2     
 
 ### Getting Started 
-Make sure that the required softwared are installed on your computer. Besides, as the main pipline exploits the parallelisation in Anduril2 as a workflow platform for analyzing large data sets, you can install the Anduril on your own computer using instructions available in "https://www.anduril.org". 
+Make sure that the required softwared are installed on your computer. Besides, as the main pipline exploits the parallelisation in Anduril2 as a workflow platform for analyzing large data sets, you can install the Anduril on your own computer using instructions available in “https://www.anduril.org”. 
 
 ## Pre-processing
 #### 1. mrxsdump.py
