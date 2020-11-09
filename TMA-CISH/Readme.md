@@ -63,6 +63,8 @@ This scala scripts contains the main body of the QuantISH pipeline. It receives 
 
 ### Downstream analysis
 
+- Otsu thresholding for two class classification of positive control intensities to filter out unreliable spots. (use Otsu.R  script)  
+- Average expression and expression variability computation can be implemented using Downstream.R script. Actually the csv outputs of the pipeline.scala should be aggeragated to a single file containing the spot IDs and patients names as well. Then Downstream.R script can be used to quantify average expression and expression variability for each individual spot and patient. 
 
 
 
