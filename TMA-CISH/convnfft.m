@@ -1,4 +1,4 @@
-
+% author : Antti Häkkinen
 % CONVNFFT N-D convolution using fast Fourier transform.
 %   C= CONVNFFT(A, B) computes an N-dimensional convolution, like
 %   CONVN(A, B), but using a fast Fourier transform.
