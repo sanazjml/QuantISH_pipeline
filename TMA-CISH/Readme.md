@@ -64,7 +64,8 @@ This scala scripts contains the main body of the QuantISH pipeline. It receives 
 ### Downstream analysis
 
 - Otsu thresholding has been done for two class classification of positive control intensities to filter out unreliable spots if is needed in the analysis. (use Otsu.R  script)    
-- Average expression and expression variability can be quantified using Downstream.R script. Actually the csv outputs of the pipeline.scala contains all information needed for quantification. However, files should be aggeragated and mapped to the patients' annotation resulting in a single file containing the spot IDs and patients names as well (like a table named CCNE1 in script). Then Downstream.R script can be used to quantify average expression and expression variability for each individual spot and patient directly. 
+- Average expression and expression variability can be quantified using Downstream_CISH.R script. Actually the csv outputs of the pipeline.scala contains all information needed for quantification. However, files should be aggeragated and mapped to the patients' annotation resulting in a single file containing the spot IDs and patients names as well (like a table named CCNE1 in script). Then Downstream_CISH.R script can be used to quantify average expression and expression variability for each individual spot and patient directly.  
+- Applying ANOVA on nested factorial linear models to perform variance analysis has been done via lmnf.R. 
 
 
 
