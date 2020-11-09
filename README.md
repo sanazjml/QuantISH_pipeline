@@ -11,6 +11,6 @@ Antti Häkkinen
 ## Cite
 To use the software for academic research, please cite via :
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4264098.svg)](https://doi.org/10.5281/zenodo.4264098)
+
 
 
