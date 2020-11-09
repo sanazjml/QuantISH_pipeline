@@ -48,7 +48,7 @@ This script is written in ImageJ macro language and implements a color separatio
 ### pipeline.scala
 
 
-This scala scripts contains the main body of the RISMAN pipeline. It receives the cropped TMA spots and separated color channels as inputs, and after implementing several steps, it quantifies target RNA inside each cells of each tissue sample. These are the steps implemented directly in pipeline.scala:
+This scala scripts contains the main body of the QuantISH pipeline. It receives the cropped TMA spots and separated brown color channel as inputs, and after implementing several steps, it quantifies cell type-specific target RNA inside each tissue sample. These are the steps implemented directly in pipeline.scala:
 
 1. Make a mask of deconvoluted brown channel. There is a MATLAB script called directly in Anduril pipeline to make a mask of deconvoluted channel for quantification step. (mask.sh, mask_fun.m, mask_run.m functions are being called in this step)
 
@@ -57,9 +57,11 @@ This scala scripts contains the main body of the RISMAN pipeline. It receives th
 
 3. Cell segmentation . The pipeline calls CellProfiler software and the saved segment.cpproj in which the non-default parameters for the images in analysis were determined experimentally. (segment.cpproj and segment.sh are called in this step)
 
-4. Cell type classification. Anduril pipeline uses quadratic classifier for cell type classification. We trained a supervised quadratic classifier using 360 cells with the area, the mean nucleus stain intensity, the eccentricity, and the perimeter-to-area ratio of each segmented object and desired cell types. For decsription about classification approach refer to manuscript. (classify.m, classify_run.m, classify.sh, convfft.m, rgb2label.m are called in this step, ‘training_image.mat is the training data needed for classification) 
+4. Cell type classification. Anduril pipeline uses quadratic classifier for cell type classification. We trained a supervised quadratic classifier using 360 cells with the area, the mean nucleus stain intensity, the eccentricity, and the perimeter-to-area ratio of each segmented object and desired cell types. For decsription about classification approach refer to the manuscript. (classify.m, classify_run.m, classify.sh, convfft.m, rgb2label.m are called in this step, 'training_image.mat' is the training data needed for classification) 
 
 5. RNA signals quantification. Eventually, the RNA signals are quantified using the isolated channel for each individual TMA in color separation step. (quantify_run.m, quantify.sh and quantify.m functions are called in this step). The quantification results in each indivdual cell of each TMA will be saved as a csv file. This files contains the segment Id, class type, SumIntensity and Area of cell in order to do any normalization of interest.
+
+### Downstream analysis
 
 
 
