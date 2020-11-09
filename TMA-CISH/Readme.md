@@ -29,7 +29,7 @@ in which -g specifies the resolution layer, -O specifies output image name, -r c
 
 
 #### 2. cropTMA.m
-In order to extract the TMA spots from the whole slide image, we implemented a MATLAB script based on the HistoCrop method [refrence to Valeria github page]. The expected number of rows and columns in the TMA spot matrix is first prespecified in the code. Afterwards, the program will segment each TMA spot in the matrix. A graphical user interface allows adding, removing, or editing any spots that are not correctly detected. Finally, the script exports the bounding box coordinates of each TMA spot as a csv file, which is used to crop each TMA spot into a separate image file for downstream analyses. You should just change the "th" and "tw" in the Matlab script based on height and width of high resolution image. There are other MATLAB function in the HistoCrop folder as dependencies of cropTMA.m function. 
+In order to extract the TMA spots from the whole slide image, we implemented a MATLAB script based on the HistoCrop method [https://github.com/jopo666/HistoCrop]. The expected number of rows and columns in the TMA spot matrix is first prespecified in the code. Afterwards, the program will segment each TMA spot in the matrix. A graphical user interface allows adding, removing, or editing any spots that are not correctly detected. Finally, the script exports the bounding box coordinates of each TMA spot as a csv file, which is used to crop each TMA spot into a separate image file for downstream analyses. You should just change the "th" and "tw" in the Matlab script based on height and width of high resolution image. There are other MATLAB function in the HistoCrop folder as dependencies of cropTMA.m function. 
 
 
 #### 3. crop_spots_all.sh
