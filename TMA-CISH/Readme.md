@@ -16,7 +16,7 @@ Anduril2
 Make sure that the required softwared are installed on your computer. Besides, as the main pipline exploits the parallelisation in Anduril2 as a workflow platform for analyzing large data sets, you can install the Anduril on your own computer using instructions available in “https://www.anduril.org”. 
 
 ## Pre-processing
-#### 1. mrxsdump.py
+#### - mrxsdump.py
  As the TMA scans in this paper were received in MIRAX (MRXS) format files containing a hierarchical pyramid of the scanned images and metadata, this python script extracts contiguous images from the tiled microscope scans. Downsampled full slide images was used for cropping TMAs in next step of pre-processing and extracts from the full resolution layer for actual analysis. Meanwhile, overlapping area caused by the slide scanner tiling is eliminated by extraction process. So then, you need first to get the size of all resolution layers from your MRXS image using:  
  
 ./mrxsdump.py  -l "TMA.png" 
@@ -28,16 +28,16 @@ which prints the list of all images from high to low resolution, and you can eas
 in which -g specifies the resolution layer, -O specifies output image name, -r corrects the tiling problem (if is available) and -P shows the process. 
 
 
-#### 2. cropTMA.m
+#### - cropTMA.m
 In order to extract the TMA spots from the whole slide image, we implemented a MATLAB script based on the HistoCrop method [https://github.com/jopo666/HistoCrop]. The expected number of rows and columns in the TMA spot matrix is first prespecified in the code. Afterwards, the program will segment each TMA spot in the matrix. A graphical user interface allows adding, removing, or editing any spots that are not correctly detected. Finally, the script exports the bounding box coordinates of each TMA spot as a csv file, which is used to crop each TMA spot into a separate image file for downstream analyses. You should just change the "th" and "tw" in the Matlab script based on height and width of high resolution image. There are other MATLAB function in the HistoCrop folder as dependencies of cropTMA.m function. 
 
 
-#### 3. crop_spots_all.sh
+#### - crop_spots_all.sh
 
 This bash script cuts the spots of a TMA slide using the coordinates obtained in previous script. Make sure the directory in which the csv files are presnet, are truly referred in crop_spots_all.sh script. 
 
 
-#### 4. macro.txt (ImageJ)
+#### - macro.txt (ImageJ)
 
 This script is written in ImageJ macro language and implements a color separation stage to separate the brown marker RNA stain from the blue nucleus stain in each TMA spot (for method details refer to manuscript). To run color separation, you just need to open Process → Batch → macro in ImageJ software and copy the macro.txt content in the blank space. The input directory should be the one in which you have saved the cropped TMA spots.  
 
