@@ -13,11 +13,13 @@ CellProfiler software (version 3.1.8)
 Anduril2   
 
 ### Getting Started 
-Make sure that the required softwared are installed on your computer. Besides, as the pipline exploits the parallelisation in Anduril2 as a workflow platform for analyzing large data sets, you can install the Anduril on your own computer using instructions available in “https://www.anduril.org”. 
+Make sure that the required softwared are installed on your computer. Besides, as the pipline exploits the parallelisation in Anduril2 as a workflow platform for analyzing large data sets, you can install the Anduril on your own computer using instructions available in “https://www.anduril.org”.  
+
 
 ## Pre-processing
 ### Caseviewer
-We have used CaseViewer software to read the MRXS immunoflorescence image, and separate its different channels as DAPI staining, and fluorescein (FITC 38 HE), Cyanine 3 (TRITC 48 HE), and Cyanine 5 (Cy5) channels for each target RNA to be quantified. The output will be saved as tiff format images. 
+We have used CaseViewer software to read the MRXS immunoflorescence image, and separate its different channels as DAPI staining, and fluorescein (FITC 38 HE), Cyanine 3 (TRITC 48 HE), and Cyanine 5 (Cy5) channels for each target RNA to be quantified. The output will be saved as tiff format images.   
+
 
 
 ## Main analysis
