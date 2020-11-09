@@ -1,7 +1,7 @@
 ## QuantISH: RNA in situ hybridization image analysis pipeline (TMA)
 This repository contains the image analysis pipeline introduced in paper “QuantISH: RNA in situ hybridization image analysis pipeline to quantify cell type-specific target RNA expression and variability in tissue samples”.
 
-QuantISH is a comprehensive image analysis pipeline for RNA in situ hybridization images which quantifies target RNAs in individual cells and patients. The pipeline is capable of quantifying chromogenic vs (immunofluorescence) and  Tissue Microarray (TMA) vs Whole Slide images efficiently.
+Here is the TMA-CISH version of pipeline which quantifies cell type-specific target RNA in chromogenic tissue microarray images. 
 
 
 ### Software requirements: 
@@ -17,15 +17,15 @@ Make sure that the required softwared are installed on your computer. Besides, a
 
 ## Pre-processing
 #### 1. mrxsdump.py
- As the TMA scans in this paper were received in MIRAX (MRXS) format files containing a hierarchical pyramid of the scanned images and metadata, this python script extracts contiguous images from the tiled microscope scans. Downsampled full slide images was used for cropping TMAs in next step of pre-processing and extracts from the full resolution layer for actual analysis. Meanwhile, overlapping area caused by the slide scanner tiling is eliminated by extraction process. So then, you need first to get the size of all resolution layers from your MRXS image using:
-./mrxsdump.py  -l “TMA.png” 
-which prints the list of all images from high to low resolution, and you can easily get the size of smallest and biggest ones for downstream analysis. Consequnetly, to extract the low resolution image for next step of analysis you just need to run
-./mrxsdump.py  -g “'HIER_0_VAL_8'”  -O thumb.png -r -P  “TMA.png”
+ As the TMA scans in this paper were received in MIRAX (MRXS) format files containing a hierarchical pyramid of the scanned images and metadata, this python script extracts contiguous images from the tiled microscope scans. Downsampled full slide images was used for cropping TMAs in next step of pre-processing and extracts from the full resolution layer for actual analysis. Meanwhile, overlapping area caused by the slide scanner tiling is eliminated by extraction process. So then, you need first to get the size of all resolution layers from your MRXS image using:  
+./mrxsdump.py  -l "TMA.png"   
+which prints the list of all images from high to low resolution, and you can easily get the size of smallest and biggest ones for downstream analysis. Consequnetly, to extract the low resolution image for next step of analysis you just need to run  
+./mrxsdump.py  -g "HIER_0_VAL_8"  -O thumb.png -r -P  "TMA.png"  
 in which -g specifies the resolution layer, -O specifies output image name, -r corrects the tiling problem (if is available) and -P shows the process. 
 
 
 #### 2. cropTMA.m
-In order to extract the TMA spots from the whole slide image, we implemented a MATLAB script based on the HistoCrop method [refrence to Valeria github page]. The expected number of rows and columns in the TMA spot matrix is first prespecified in the code. Afterwards, the program will segment each TMA spot in the matrix. A graphical user interface allows adding, removing, or editing any spots that are not correctly detected. Finally, the script exports the bounding box coordinates of each TMA spot as a csv file, which is used to crop each TMA spot into a separate image file for downstream analyses. You should just change the “th” and “tw” in the Matlab script based on height and width of high resolution image. There are other MATLAB function in the HistoCrop folder as dependencies of cropTMA.m function. 
+In order to extract the TMA spots from the whole slide image, we implemented a MATLAB script based on the HistoCrop method [refrence to Valeria github page]. The expected number of rows and columns in the TMA spot matrix is first prespecified in the code. Afterwards, the program will segment each TMA spot in the matrix. A graphical user interface allows adding, removing, or editing any spots that are not correctly detected. Finally, the script exports the bounding box coordinates of each TMA spot as a csv file, which is used to crop each TMA spot into a separate image file for downstream analyses. You should just change the "th" and "tw" in the Matlab script based on height and width of high resolution image. There are other MATLAB function in the HistoCrop folder as dependencies of cropTMA.m function. 
 
 
 #### 3. crop_spots_all.sh
