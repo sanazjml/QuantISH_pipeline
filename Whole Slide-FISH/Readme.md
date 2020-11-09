@@ -37,6 +37,11 @@ This scala scripts contains the main body of the QuantISH pipeline. It receives 
 
 5. RNA signals quantification.  Cross-channel fluorescence bleed of Cy5, FITC and TRITC staining was reduced by finding a suitable basis near for the intensity data of all pixels near the principal axes using power iteration. This procedure is being done through running ‘princompgen.m’ in quantification step. Next, the fluorescence intensity signal was quantified using the negative response of a Laplacian of Gaussian filter with standard deviation of unity (quantify_run.m, quantify.sh and quantify.m functions are called in this step). Eventually, the quantification results in each indivdual cell of each TMA will be saved as a csv file. These files contain the segment Id, class type, SumIntensity of 3 channles including (Cy5, FITC and TRITC) and area of cell as well to do any normalization of interest.
 
+#### Downstream analysis
+
+    Otsu thresholding has been done for two class classification of positive control intensities to filter out unreliable spots if is needed in the analysis. (use Otsu.R script)
+    Average expression and expression variability can be quantified using Downstream.R script. Actually the csv outputs of the pipeline.scala contains all information needed for quantification. However, files should be aggeragated and mapped to the patients' annotation resulting in a single file containing the spot IDs and patients names as well (like a table named CCNE1 in script). Then Downstream.R script can be used to quantify average expression and expression variability for each individual spot and patient directly.
+
 
 
 
