@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-#
+# author: Antti Häkkinen
 # This has been very helpful:
 # https://openslide.org/formats/mirax/
 #
