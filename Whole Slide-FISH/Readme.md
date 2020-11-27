@@ -41,7 +41,7 @@ This scala scripts contains the main body of the QuantISH pipeline. It receives 
 
 #### Downstream analysis
 
-   Average expression and expression variability can be quantified fpr each separated channel in whole slide images using Downstream_FISH.R script. Actually the csv outputs of the pipeline.scala contains all information needed for quantification. However, files should be aggeragated and mapped to the patients' annotation resulting in a single file containing the patients' IDs. Then Downstream_FISH.R script can be used to quantify average expression and expression variability for each individual patient directly.
+   Average expression and expression variability can be quantified for each separated channel in whole slide images using Downstream_FISH.R script. Actually the csv outputs of the pipeline.scala contains all information needed for quantification. However, files should be aggeragated and mapped to the patients' annotation resulting in a single file containing the patients' IDs. Then Downstream_FISH.R script can be used to quantify average expression and expression variability for each individual patient directly.
 
 
 
