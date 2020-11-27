@@ -8,7 +8,7 @@ Here is the Whole Slide-FISH version of pipeline which quantifies cell type-spec
 ### Software requirements: 
 Matlab  
 Python  
-CaseViewer  
+CaseViewer (version 2.3.0)
 CellProfiler software (version 3.1.8)  
 Anduril2   
 
