@@ -10,7 +10,6 @@ Antti Häkkinen
 
 ## Cite
 To use the software for academic research, please cite via :
-
 [![DOI](https://zenodo.org/badge/311117778.svg)](https://zenodo.org/badge/latestdoi/311117778)
 
 
