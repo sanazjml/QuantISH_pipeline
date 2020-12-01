@@ -1,6 +1,6 @@
 function stats= quantify(labels, chan1, chan2, chan3, clazzes)
 
-
+% cell expansion to include cytoplasm
 expansion_radii = [ 20, 5, 5 ] ;
 Labels_filt = clazzes;
 cancerindex = find(ismember(Labels_filt, 1)).';
@@ -39,14 +39,14 @@ expanded_labels= zeros(size(labels), 'like', labels);
 expanded_labels(:)= labels(IDX);
 expanded_labels( ~( finalImage | labels > 0 ) )= 0;
 
-
+% read multiple channels per each image
 srcs = {chan1, chan2, chan3};
 	
 	for j= numel(srcs) : -1 : 1
 		X(:, :, j)= mean( im2single( imread(srcs{j}) ), 3 );
     end
 	
-	% remove cross-channel effects
+% remove cross-channel effects
     V = reshape( X, [], size(X, 3) );
 
     c0= median( V, 1 );
@@ -54,15 +54,15 @@ srcs = {chan1, chan2, chan3};
     c= c0.' + c;
     clear V;
  
-	%[U, Z, ~, c]= princompgen( reshape( X, [], size(X, 3) ), 'MaxIter', 10 );
-	Z( ~(( Z == max( Z, [], 2 ) )) )= 0;
-	Z= reshape( Z, size(X) );
-	%clear X;  % we can give up some memory here
+
+     Z( ~(( Z == max( Z, [], 2 ) )) )= 0;
+     Z= reshape( Z, size(X) );
+     %clear X;  % we can give up some memory here
 	
-	% quantify spots
-	lsigma= 1; lr= 15;  % log kernel sd & radius
-	for j= 1:size(Z, 3)
-		Z(:, :, j)= max( imfilter( Z(:, :, j), -fspecial('log', lr, lsigma) ), 0 );
+     % quantify RNA expression
+       lsigma= 1; lr= 15;  % log kernel sd & radius
+       for j= 1:size(Z, 3)
+	      Z(:, :, j)= max( imfilter( Z(:, :, j), -fspecial('log', lr, lsigma) ), 0 );
 	end
 	
   ch1 = Z(:, :, 1);
