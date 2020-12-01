@@ -1,7 +1,8 @@
 
 function stats= quantify(img, Sig, labels, clazzes)
 	%%
-	% TODO: implement low pass filter etc. 
+	
+	
 	% Cell expansion
             
 	expansion_radii = [ 20, 5, 5 ] ;
@@ -44,7 +45,7 @@ function stats= quantify(img, Sig, labels, clazzes)
 	
 
 	%%
-	% get signal
+	% get RNA signal
         
         Sig = imcomplement(Sig);
         Sig = im2single(Sig);
