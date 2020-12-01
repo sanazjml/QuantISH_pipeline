@@ -34,7 +34,7 @@ L_TREE = fitcdiscr (V_total,  L_total, 'DiscrimType','quadratic', 'Prior', 'unif
 [Label, score, cost] = predict(L_TREE, V);
 
 
-% Use probability maps to propogate the probability of cells in classification
+% Use probability maps to propogate the probability of each cell classification class
 score_for_pix_of_cell = score ./ [ props.Area ].';  % tune kernels
 
 L_pix = zeros(size(labels));
