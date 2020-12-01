@@ -5,7 +5,5 @@ if [ $# -ne 5 ]; then
 	exit 1
 fi
 
-# TODO: delete after implementing quantify.m  
-
 path="$(dirname "$0")"
 "$path/matlab-run.py" "$path/quantify_run.m" src_spot="$1" src_channel="$2" src_segmented="$3" src_classes="$4" dest="$5"
