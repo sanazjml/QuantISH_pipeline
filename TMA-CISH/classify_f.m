@@ -10,7 +10,7 @@ props = regionprops(labels, 'Area', 'Centroid', 'PixelIdxList', 'Eccentricity', 
     'MinorAxisLength', 'MajorAxisLength', 'PixelList', 'Image', 'Perimeter');
 
 
-% compute more stuff from img
+% compute more properties from image
 for j= 1:numel(props)
     props(j).MeanIntensity= mean( gray_img( props(j).PixelIdxList ) );
 end
@@ -22,15 +22,19 @@ end
 V = [ log([props.Area].'), [props.MeanIntensity].', log( 1 - [props.Eccentricity].' ), [props.Wigginess].' ];
 %%
 
+% load trainign data 
 load('training_data.mat');
 table = Table_Training;
 V_total = cell2mat(table(:,5:8));
 L_total = cell2mat(table(:,2));
 %%
 
+% quadratic classifier
 L_TREE = fitcdiscr (V_total,  L_total, 'DiscrimType','quadratic', 'Prior', 'uniform');
 [Label, score, cost] = predict(L_TREE, V);
 
+
+% Use probability maps to propogate the probability of cells in classification
 score_for_pix_of_cell = score ./ [ props.Area ].';  % tune kernels
 
 L_pix = zeros(size(labels));
