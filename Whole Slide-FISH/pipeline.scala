@@ -1,8 +1,6 @@
 #!/usr/bin/env anduril
 //$OPT --wrapper slurm-prefix
-//$OPT --threads 1
-//$PRE export ANDURIL_SELECTNODE=half
-//$PRE export ANDURIL_NODELIST="evmfull02"
+//$OPT --threads 20
 
 
 
