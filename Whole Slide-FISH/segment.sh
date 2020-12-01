@@ -7,14 +7,6 @@ if [ $# -ne 2 ]; then
 	exit 1
 fi
 
-# TODO: when you run full dataset, comment out this part to have 
-# empty segmentation instead of re-running the cellprofiler
-# then run ./take_segmented.sh to copy already run cellprofiler
-# results over the empty segmentation results
-
-# TODO: then delete this line when this is done for all data
-
-#exec "$(dirname "$0")/segment_null.sh" "$@"
 
 src="$1"
 dest="$2"
