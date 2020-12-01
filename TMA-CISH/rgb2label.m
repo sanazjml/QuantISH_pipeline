@@ -1,4 +1,4 @@
-
+% author: Antti Häkkinen
 % RGB2LABEL Convert an RGB image to labels
 %   [labels, cc]= RGB2LABEL(img)
 
