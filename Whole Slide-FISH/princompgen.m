@@ -1,4 +1,5 @@
 
+% author: Antti Häkkinen
 % PRINCOMPGEN Non-orthogonal basis analysis using power iteration.
 %   [coeff, score, latent, center]= PRINCOMPGEN(X, ...)
 
