@@ -23,9 +23,6 @@ compute.stat <- function(rows) {
 }
 
 
-# this is a helper that groups data like aggregate and applies the function to 
-# each row and returns the result.. aggregate can't work on multiple variables
-# so we need to pass in row indices, work on them, and assemble the mess..
 aggr.mv <- function(rows, by, FUN) {
   out <- aggregate( seq_len(nrow(rows)), by = by, FUN = function(row.inds)
     return (FUN( rows[row.inds, , drop = F] )), simplify = F )
