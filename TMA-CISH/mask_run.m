@@ -3,6 +3,6 @@
 img= imread(src_spot);
 Sig = imread(src_channel);
 
-% mask
+% make the mask of color channel
 Mask= mask_fun(img, Sig);
 imwrite( Mask, dest);
