@@ -1,7 +1,6 @@
 #!/usr/bin/env anduril
 //$OPT --wrapper slurm-prefix
 //$OPT --threads 20
-//$PRE export ANDURIL_SELECTNODE=maxfree
 
 import anduril.builtin._, anduril.tools._
 import org.anduril.runtime._
@@ -72,7 +71,7 @@ object Pipeline {
         }
 
 
-	// Segmentation
+	// Cell Segmentation
         val segmented_spot_images = NamedMap[Port]("segmented_spot_images")
 	for ((name, _) <- iterArray(filled_images)) {
 		withName(name) {
@@ -87,7 +86,7 @@ object Pipeline {
 		}
 	}
 
-	// Classification
+	// Cell Classification
 	val segment_classes = NamedMap[Port]("segment_classes")
 	for ((name, _) <- iterArray(filled_images)) {
 		withName(name) {
