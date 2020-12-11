@@ -17,7 +17,7 @@ Make sure that the required softwared are installed on your computer. Besides, a
 
 ## Pre-processing
 #### - mrxsdump.py
- As the TMA scans in this paper were received in MIRAX (MRXS) format files containing a hierarchical pyramid of the scanned images and metadata, this python script extracts contiguous images from the tiled microscope scans. Downsampled full slide images was used for cropping TMAs in next step of pre-processing and extracts from the full resolution layer for actual analysis. Meanwhile, overlapping area caused by the slide scanner tiling is eliminated by extraction process. So then, you need first to get the size of all resolution layers from your MRXS image using:  
+As the TMA scans in this paper were received in MIRAX (MRXS) format files containing a hierarchical pyramid of the scanned images and metadata, this python script extracts contiguous images from the tiled microscope scans. Downsampled full slide images was used for cropping TMAs in next step of pre-processing and extracts from the full resolution layer for actual analysis. Meanwhile, overlapping area caused by the slide scanner tiling is eliminated by extraction process. So then, you need first to get the size of all resolution layers from your MRXS image using:  
  
 ./mrxsdump.py  -l "TMA.png" 
 
@@ -34,7 +34,7 @@ In order to extract the TMA spots from the whole slide image, we implemented a M
 
 #### - crop_spots_all.sh
 
-This bash script cuts the spots of a TMA slide using the coordinates obtained in previous script. Make sure the directory in which the csv files are presnet, are truly referred in crop_spots_all.sh script. 
+This bash script cuts the spots of a TMA slide using the coordinates obtained in previous script. Make sure the directory in which the csv files are present, are truly referred in crop_spots_all.sh script. 
 
 
 #### - macro.txt (ImageJ)
@@ -48,7 +48,7 @@ This script is written in ImageJ macro language and implements a color separatio
 ### pipeline.scala
 
 
-This scala scripts contains the main body of the QuantISH pipeline. It receives the cropped TMA spots and separated brown color channel as inputs, and after implementing several steps, it quantifies cell type-specific target RNA inside each tissue sample. These are the steps implemented directly in pipeline.scala:
+This scala scripts contains the main body of the QuantISH pipeline. It receives the cropped TMA spots and separated brown color channel as inputs, and after implementing following steps, it quantifies cell type-specific target RNA inside each tissue sample. These are the steps implemented directly in pipeline.scala:
 
 1. Make a mask of deconvoluted brown channel. There is a MATLAB script called directly in Anduril pipeline to make a mask of deconvoluted channel for quantification step. (mask.sh, mask_fun.m, mask_run.m functions are being called in this step)
 
@@ -61,7 +61,7 @@ This scala scripts contains the main body of the QuantISH pipeline. It receives 
 
 5. RNA signals quantification. Eventually, the RNA signals are quantified using the isolated channel for each individual TMA in color separation step. (quantify_run.m, quantify.sh and quantify.m functions are called in this step). The quantification results in each indivdual cell of each TMA will be saved as a csv file. This files contains the segment Id, class type, SumIntensity and Area of cell in order to do any normalization of interest.
 
-### Downstream analysis
+### Downstream analysis  
 
 - Otsu thresholding has been done for two class classification of positive control intensities to filter out unreliable spots. (use Otsu.R  script)    
 - Average expression and expression variability can be quantified using Downstream_CISH.R script. Actually the csv outputs of the pipeline.scala contains all information needed for quantification. However, files should be aggeragated and mapped to the patients' annotation resulting in a single file containing the spot IDs and patients names as well (like a table named CCNE1 in script). Then Downstream_CISH.R script can be used to quantify average expression and expression variability for each individual spot and patient directly.  
