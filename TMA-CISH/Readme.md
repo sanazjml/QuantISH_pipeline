@@ -17,15 +17,58 @@ Make sure that the required softwared are installed on your computer. Besides, a
 
 ## Pre-processing
 #### - mrxsdump.py
-As the TMA scans in this paper were received in MIRAX (MRXS) format files containing a hierarchical pyramid of the scanned images and metadata, this python script extracts contiguous images from the tiled microscope scans. Downsampled full slide images was used for cropping TMAs in next step of pre-processing and extracts from the full resolution layer for actual analysis. Meanwhile, overlapping area caused by the slide scanner tiling is eliminated by extraction process. So then, you need first to get the size of all resolution layers from your MRXS image using:  
+As the TMA scans in this paper were received in MIRAX (MRXS) format files containing a hierarchical pyramid of the scanned images and metadata, this python script extracts contiguous images from the tiled microscope scans. Downsampled full slide images was used for cropping TMAs in next step of pre-processing and extracts from the full resolution layer for actual analysis. Meanwhile, overlapping area caused by the slide scanner tiling is eliminated by extraction process. Here, in order to have a small size image for analysis, we have cropped 4 TMAs from the whole slide TMA as input "CCNE1_TMA.mrxs" for which you first need to get the size of all resolution layers from your MRXS image using:  
  
  ` ./mrxsdump.py  -l CCNE1_TMA.mrxs `
 
-which prints the list of all images from high to low resolution, and you can easily get the size of smallest and biggest ones for downstream analysis. Consequnetly, to extract the low resolution image for next step of analysis you just need to run 
+which prints the list of all images from high to low resolution, and you can easily get the size of smallest and biggest ones for downstream analysis. 
+`warning: output directory . exists and is not empty
+warning: NONHIER_5_VAL_1 tile (0,) already exists, ignoring furher data
+warning: NONHIER_5_VAL_1 tile (1,) already exists, ignoring furher data
+warning: NONHIER_5_VAL_1 tile (2,) already exists, ignoring furher data
+warning: NONHIER_5_VAL_1 tile (0,) already exists, ignoring furher data
+warning: NONHIER_5_VAL_1 tile (1,) already exists, ignoring furher data
+warning: NONHIER_5_VAL_1 tile (2,) already exists, ignoring furher data
+warning: NONHIER_5_VAL_1 tile (0,) already exists, ignoring furher data
+warning: NONHIER_5_VAL_1 tile (1,) already exists, ignoring furher data
+warning: NONHIER_5_VAL_1 tile (2,) already exists, ignoring furher data
+HIER_0_VAL_0 with 8,740 tiles, 170496x410624 pixels (jpg)..
+HIER_0_VAL_1 with 2,256 tiles, 85248x205312 pixels (jpg)..
+HIER_0_VAL_2 with 600 tiles, 42624x102656 pixels (jpg)..
+HIER_0_VAL_3 with 156 tiles, 21312x51328 pixels (jpg)..
+HIER_0_VAL_4 with 42 tiles, 10656x25664 pixels (jpg)..
+HIER_0_VAL_5 with 16 tiles, 5328x12832 pixels (jpg)..
+HIER_0_VAL_6 with 9 tiles, 2664x6416 pixels (jpg)..
+HIER_0_VAL_7 with 4 tiles, 1332x3208 pixels (jpg)..
+HIER_0_VAL_8 with 4 tiles, 666x1604 pixels (jpg)..
+HIER_0_VAL_9 with 2 tiles, 333x802 pixels (jpg)..
+HIER_1_VAL_0 with 8,740 tiles (dat)..
+HIER_1_VAL_1 with 2,256 tiles, 256x256 pixels (png)..
+HIER_2_VAL_0 with 600 tiles, 256x256 pixels (png)..
+HIER_2_VAL_1 with 156 tiles, 256x256 pixels (png)..
+HIER_2_VAL_2 with 42 tiles, 256x256 pixels (png)..
+HIER_3_VAL_0 with 16 tiles, 256x256 pixels (png)..
+NONHIER_0_VAL_0 with 1 tiles (dat)..
+NONHIER_1_VAL_0 with 1 tiles, 88x212 pixels (bmp)..
+NONHIER_1_VAL_1 with 1 tiles (xml)..
+NONHIER_1_VAL_2 with 1 tiles, 1400x3373 pixels (jpg)..
+NONHIER_1_VAL_3 with 1 tiles, 1776x1301 pixels (jpg)..
+NONHIER_1_VAL_4 with 1 tiles, 666x1604 pixels (jpg)..
+NONHIER_1_VAL_5 with 1 tiles, 88x212 pixels (bmp)..
+NONHIER_1_VAL_7 with 1 tiles (dat)..
+NONHIER_1_VAL_8 with 1 tiles (dat)..
+NONHIER_2_VAL_0 with 1 tiles (dat)..
+NONHIER_3_VAL_0 with 1 tiles (dat)..
+NONHIER_4_VAL_0 with 2 tiles (xml)..
+NONHIER_5_VAL_0 with 1 tiles (xml)..
+NONHIER_5_VAL_1 with 3 tiles (dat)..`
 
-./mrxsdump.py  -g "HIER_0_VAL_8"  -O thumb.png -r -P  "TMA.png"   
 
-in which -g specifies the resolution layer, -O specifies output image name, -r corrects the tiling problem (if is available) and -P shows the process. 
+Consequnetly, to extract the low resolution image for next step of analysis you just need to run 
+
+`./mrxsdump.py  -g "HIER_0_VAL_9"  -O CCNE1_TMA_lr.png -P  CCNE1_TMA.mrxs`
+
+in which -g specifies the resolution layer, -O specifies output image name, and -P shows the process. 
 
 
 #### - cropTMA.m
