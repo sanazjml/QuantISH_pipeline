@@ -19,7 +19,9 @@ Make sure that the required softwared are installed on your computer. Besides, a
 #### - mrxsdump.py
 As the TMA scans in this paper were received in MIRAX (MRXS) format files containing a hierarchical pyramid of the scanned images and metadata, this python script extracts contiguous images from the tiled microscope scans. Downsampled full slide images was used for cropping TMAs in next step of pre-processing and extracts from the full resolution layer for actual analysis. Meanwhile, overlapping area caused by the slide scanner tiling is eliminated by extraction process. Here, in order to have a small size image for analysis, we have cropped 4 TMAs from the whole slide TMA as input "CCNE1_TMA.mrxs" for which you first need to get the size of all resolution layers from your MRXS image using:  
  
- ` ./mrxsdump.py  -l CCNE1_TMA.mrxs `
+ ```
+ ./mrxsdump.py  -l CCNE1_TMA.mrxs 
+ ```
 
 which prints the list of all images from high to low resolution, and you can easily get the size of smallest and biggest ones for downstream analysis.   
 ``` 
@@ -67,11 +69,29 @@ NONHIER_5_VAL_1 with 3 tiles (dat)..
 ```
 
 
-Consequnetly, to extract the low resolution image for next step of analysis you just need to run 
+Consequnetly, to extract the low resolution image for next step of analysis you just need to run. Here, we extract the HIER_0_VAL_8 layer via: 
 
-`./mrxsdump.py  -g "HIER_0_VAL_9"  -O CCNE1_TMA_lr.png -P  CCNE1_TMA.mrxs`
+```
+./mrxsdump.py  -g "HIER_0_VAL_8"  -O CCNE1_TMA_lr.png -P  CCNE1_TMA.mrxs
+```
 
-in which -g specifies the resolution layer, -O specifies output image name, and -P shows the process. 
+in which -g specifies the resolution layer, -O specifies output image name, and -P shows the process. Hence, one will see this message:  
+
+```
+warning: output directory . exists and is not empty  
+warning: NONHIER_5_VAL_1 tile (0,) already exists, ignoring furher data  
+warning: NONHIER_5_VAL_1 tile (1,) already exists, ignoring furher data  
+warning: NONHIER_5_VAL_1 tile (2,) already exists, ignoring furher data  
+warning: NONHIER_5_VAL_1 tile (0,) already exists, ignoring furher data  
+warning: NONHIER_5_VAL_1 tile (1,) already exists, ignoring furher data  
+warning: NONHIER_5_VAL_1 tile (2,) already exists, ignoring furher data  
+warning: NONHIER_5_VAL_1 tile (0,) already exists, ignoring furher data  
+warning: NONHIER_5_VAL_1 tile (1,) already exists, ignoring furher data  
+warning: NONHIER_5_VAL_1 tile (2,) already exists, ignoring furher data  
+HIER_0_VAL_8 with 4 tiles..  
+```
+
+and also "CCNE1_TMA_lr.png" image is the low resolution one saved for downstream analysis. 
 
 
 #### - cropTMA.m
