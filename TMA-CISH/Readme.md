@@ -23,83 +23,44 @@ As the TMA scans in this paper were received in MIRAX (MRXS) format files contai
 
 which prints the list of all images from high to low resolution, and you can easily get the size of smallest and biggest ones for downstream analysis.   
 `warning: output directory . exists and is not empty  
-
 warning: NONHIER_5_VAL_1 tile (0,) already exists, ignoring furher data  
-
-warning: NONHIER_5_VAL_1 tile (1,) already exists, ignoring furher data 
-
-warning: NONHIER_5_VAL_1 tile (2,) already exists, ignoring furher data  
-
-warning: NONHIER_5_VAL_1 tile (0,) already exists, ignoring furher data  
-
 warning: NONHIER_5_VAL_1 tile (1,) already exists, ignoring furher data  
-
-warning: NONHIER_5_VAL_1 tile (2,) already exists, ignoring furher data
-
-warning: NONHIER_5_VAL_1 tile (0,) already exists, ignoring furher data  
-
-warning: NONHIER_5_VAL_1 tile (1,) already exists, ignoring furher data 
-
 warning: NONHIER_5_VAL_1 tile (2,) already exists, ignoring furher data  
-
+warning: NONHIER_5_VAL_1 tile (0,) already exists, ignoring furher data  
+warning: NONHIER_5_VAL_1 tile (1,) already exists, ignoring furher data  
+warning: NONHIER_5_VAL_1 tile (2,) already exists, ignoring furher data  
+warning: NONHIER_5_VAL_1 tile (0,) already exists, ignoring furher data  
+warning: NONHIER_5_VAL_1 tile (1,) already exists, ignoring furher data  
+warning: NONHIER_5_VAL_1 tile (2,) already exists, ignoring furher data  
 HIER_0_VAL_0 with 8,740 tiles, 170496x410624 pixels (jpg)..  
-
 HIER_0_VAL_1 with 2,256 tiles, 85248x205312 pixels (jpg)..  
-
 HIER_0_VAL_2 with 600 tiles, 42624x102656 pixels (jpg)..  
-
 HIER_0_VAL_3 with 156 tiles, 21312x51328 pixels (jpg)..  
-
 HIER_0_VAL_4 with 42 tiles, 10656x25664 pixels (jpg)..  
-
 HIER_0_VAL_5 with 16 tiles, 5328x12832 pixels (jpg)..  
-
 HIER_0_VAL_6 with 9 tiles, 2664x6416 pixels (jpg)..  
-
 HIER_0_VAL_7 with 4 tiles, 1332x3208 pixels (jpg)..  
-
 HIER_0_VAL_8 with 4 tiles, 666x1604 pixels (jpg)..  
-
 HIER_0_VAL_9 with 2 tiles, 333x802 pixels (jpg)..  
-
 HIER_1_VAL_0 with 8,740 tiles (dat)..  
-
 HIER_1_VAL_1 with 2,256 tiles, 256x256 pixels (png)..  
-
 HIER_2_VAL_0 with 600 tiles, 256x256 pixels (png)..  
-
 HIER_2_VAL_1 with 156 tiles, 256x256 pixels (png)..  
-
 HIER_2_VAL_2 with 42 tiles, 256x256 pixels (png)..  
-
 HIER_3_VAL_0 with 16 tiles, 256x256 pixels (png)..  
-
 NONHIER_0_VAL_0 with 1 tiles (dat)..  
-
 NONHIER_1_VAL_0 with 1 tiles, 88x212 pixels (bmp)..  
-
 NONHIER_1_VAL_1 with 1 tiles (xml)..  
-
 NONHIER_1_VAL_2 with 1 tiles, 1400x3373 pixels (jpg)..  
-
 NONHIER_1_VAL_3 with 1 tiles, 1776x1301 pixels (jpg)..  
-
 NONHIER_1_VAL_4 with 1 tiles, 666x1604 pixels (jpg)..  
-
 NONHIER_1_VAL_5 with 1 tiles, 88x212 pixels (bmp)..  
-
 NONHIER_1_VAL_7 with 1 tiles (dat)..  
-
 NONHIER_1_VAL_8 with 1 tiles (dat)..  
-
 NONHIER_2_VAL_0 with 1 tiles (dat)..  
-
 NONHIER_3_VAL_0 with 1 tiles (dat)..  
-
 NONHIER_4_VAL_0 with 2 tiles (xml)..  
-
 NONHIER_5_VAL_0 with 1 tiles (xml)..  
-
 NONHIER_5_VAL_1 with 3 tiles (dat)..`  
 
 
