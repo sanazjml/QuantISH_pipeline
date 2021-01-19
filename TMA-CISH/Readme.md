@@ -17,7 +17,7 @@ Make sure that the required softwared are installed on your computer. Besides, a
 
 ## Pre-processing
 #### - mrxsdump.py
-As the TMA scans in this paper were received in MIRAX (MRXS) format files containing a hierarchical pyramid of the scanned images and metadata, this python script extracts contiguous images from the tiled microscope scans. Downsampled full slide images was used for cropping TMAs in next step of pre-processing and extracts from the full resolution layer for actual analysis. Meanwhile, overlapping area caused by the slide scanner tiling is eliminated by extraction process. Here, in order to have a small size image analysis, we have extracted 1 TMA MRXS file from the whole slide TMA MRXS file as input "CCNE1_TMA.mrxs". So, first you need to get the size of all resolution layers from your MRXS image using:  
+As the TMA scans in this paper were received in MIRAX (MRXS) format files containing a hierarchical pyramid of the scanned images and metadata, this python script extracts contiguous images from the tiled microscope scans. Downsampled full slide images was used for cropping TMAs in next step of pre-processing and extracts from the full resolution layer for actual analysis. Meanwhile, overlapping area caused by the slide scanner tiling is eliminated by extraction process. Here, in order to have a small size image analysis, we have extracted 1 TMA MRXS file from the whole slide TMA MRXS file as input "CCNE1_TMA.mrxs". So, first you need to get the size of all resolution layers from your MRXS image using (please extract the compressed file CCNE1_TMA.zip before any kind of analysis):  
  
  ```
  ./mrxsdump.py  -l CCNE1_TMA.mrxs 
@@ -87,6 +87,11 @@ and also "CCNE1_TMA_lr.png" image is the low resolution one saved for downstream
 
 #### - cropTMA.m
 In order to extract the TMA spots from the whole slide image, we implemented a MATLAB script based on the HistoCrop method [https://github.com/jopo666/HistoCrop]. The expected number of rows and columns in the TMA spot matrix is first prespecified in the code. Afterwards, the program will segment each TMA spot in the matrix. A graphical user interface allows adding, removing, or editing any spots that are not correctly detected. Finally, the script exports the bounding box coordinates of each TMA spot as a csv file, which is used to crop each TMA spot into a separate image file for downstream analyses. You should just change the "th" and "tw" in the Matlab script based on height and width of high resolution image. There are other MATLAB function in the HistoCrop folder as dependencies of cropTMA.m function. 
+
+As here we have just one TMA in the slide, we would have one cropped TMA coordinates as the output:
+
+
+
 
 
 #### - crop_spots_all.sh
