@@ -24,8 +24,9 @@ As the TMA scans in this paper were received in MIRAX (MRXS) format files contai
 which prints the list of all images from high to low resolution, and you can easily get the size of smallest and biggest ones for downstream analysis.   
 ``` 
 warning: output directory . exists and is not empty 
-warning: NONHIER_5_VAL_1 tile (0,) already exists, ignoring furher data/warning: NONHIER_5_VAL_1 tile (1,) already exists, ignoring furher data  
--warning: NONHIER_5_VAL_1 tile (2,) already exists, ignoring furher data  
+warning: NONHIER_5_VAL_1 tile (0,) already exists, ignoring furher data  
+warning: NONHIER_5_VAL_1 tile (1,) already exists, ignoring furher data  
+warning: NONHIER_5_VAL_1 tile (2,) already exists, ignoring furher data  
 warning: NONHIER_5_VAL_1 tile (0,) already exists, ignoring furher data  
 warning: NONHIER_5_VAL_1 tile (1,) already exists, ignoring furher data  
 warning: NONHIER_5_VAL_1 tile (2,) already exists, ignoring furher data  
