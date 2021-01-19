@@ -22,9 +22,9 @@ As the TMA scans in this paper were received in MIRAX (MRXS) format files contai
  ` ./mrxsdump.py  -l CCNE1_TMA.mrxs `
 
 which prints the list of all images from high to low resolution, and you can easily get the size of smallest and biggest ones for downstream analysis.   
-`warning: output directory . exists and is not empty  
-warning: NONHIER_5_VAL_1 tile (0,) already exists, ignoring furher data  
-warning: NONHIER_5_VAL_1 tile (1,) already exists, ignoring furher data  
+``` 
+warning: output directory . exists and is not empty 
+warning: NONHIER_5_VAL_1 tile (0,) already exists, ignoring furher data/warning: NONHIER_5_VAL_1 tile (1,) already exists, ignoring furher data  
 -warning: NONHIER_5_VAL_1 tile (2,) already exists, ignoring furher data  
 warning: NONHIER_5_VAL_1 tile (0,) already exists, ignoring furher data  
 warning: NONHIER_5_VAL_1 tile (1,) already exists, ignoring furher data  
@@ -61,7 +61,9 @@ NONHIER_2_VAL_0 with 1 tiles (dat)..
 NONHIER_3_VAL_0 with 1 tiles (dat)..  
 NONHIER_4_VAL_0 with 2 tiles (xml)..  
 NONHIER_5_VAL_0 with 1 tiles (xml)..  
-NONHIER_5_VAL_1 with 3 tiles (dat)..´
+NONHIER_5_VAL_1 with 3 tiles (dat)..
+
+```
 
 
 Consequnetly, to extract the low resolution image for next step of analysis you just need to run 
