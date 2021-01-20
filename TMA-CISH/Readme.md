@@ -95,15 +95,17 @@ This bash script cuts the spots of a TMA slide using the coordinates obtained in
 As here we have just one TMA in the slide, we would have one cropped TMA coordinates as the output. Here is a snapshot of output spot (note that this is not image file for downstream analysis. We will continue with a portion of cropped TMA spot for downstream analysis):
 
 
- ![alt text](https://github.com/sanazjml/QuantISH_pipeline/blob/main/TMA-CISH/CCNE1_TMA_HIER_0_VAL_0.png)  
+ ![alt text](https://github.com/sanazjml/QuantISH_pipeline/blob/main/TMA-CISH/CCNE1_TMA_HIER_0_VAL_0.png)    
 
 
 
 #### - macro.txt (ImageJ)
 
-This script is written in ImageJ macro language and implements a color separation stage to separate the brown marker RNA stain from the blue nucleus stain in each TMA spot (for method details refer to manuscript). To run color separation, you just need to open Process → Batch → macro in ImageJ software and copy the macro.txt content in the blank space. The input directory should be the one in which you have saved the cropped TMA spots.  
+This script is written in ImageJ macro language and implements a color separation stage to separate the brown marker RNA stain from the blue nucleus stain in each TMA spot (for method details refer to manuscript). To run color separation, you just need to open Process → Batch → macro in ImageJ software and copy the macro.txt content in the blank space. The input directory should be the one in which you have saved the cropped TMA spots. Here is the snapshot of imagej software and the macro which has copied to the proper box:
 
 
+
+ ![alt text](https://github.com/sanazjml/QuantISH_pipeline/blob/main/TMA-CISH/imagej.png)  
 
 
 
