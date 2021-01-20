@@ -95,9 +95,8 @@ This bash script cuts the spots of a TMA slide using the coordinates obtained in
 As here we have just one TMA in the slide, we would have one cropped TMA coordinates as the output. Here is a snapshot of output spot (note that this is not image file for downstream analysis. We will continue with a portion of cropped TMA spot for downstream analysis):
 
 
- ![alt text](https://github.com/sanazjml/QuantISH_pipeline/blob/main/TMA-CISH/CCNE1_TMA_HIER_0_VAL_0.png)    
-
-
+ 
+<img src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/TMA-CISH/CCNE1_TMA_HIER_0_VAL_0.png" data-canonical-src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/TMA-CISH/CCNE1_TMA_HIER_0_VAL_0.png" width="600" height="600" />
 
 #### - macro.txt (ImageJ)
 
@@ -105,12 +104,14 @@ This script is written in ImageJ macro language and implements a color separatio
 
 
 
- ![alt text](https://github.com/sanazjml/QuantISH_pipeline/blob/main/TMA-CISH/imagej.png)  
+ ![alt text](https://github.com/sanazjml/QuantISH_pipeline/blob/main/TMA-CISH/imagej.png)    
 
 
-Hence, here is the output of imagej color deconvolution for the spot of interest:
+Hence, here is the output of imagej color deconvolution for the spot of interest:  
 
- ![alt text](https://github.com/sanazjml/QuantISH_pipeline/blob/main/TMA-CISH/CCNE1_TMA_HIER_0_VAL_0_color_channel.png)
+ 
+<img src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/TMA-CISH/CCNE1_TMA_HIER_0_VAL_0_color_channel.png" data-canonical-src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/TMA-CISH/CCNE1_TMA_HIER_0_VAL_0_color_channel.png" width="600" height="600" />  
+
 
 
 
@@ -119,7 +120,9 @@ Hence, here is the output of imagej color deconvolution for the spot of interest
 ### pipeline.scala
 
 
-This scala scripts contains the main body of the QuantISH pipeline. It receives the cropped TMA spots and separated brown color channel as inputs, and after implementing following steps, it quantifies cell type-specific target RNA inside each tissue sample. These are the steps implemented directly in pipeline.scala:
+This scala scripts contains the main body of the QuantISH pipeline. It receives the cropped TMA spots and separated brown color channel as inputs, and after implementing following steps, it quantifies cell type-specific target RNA inside each tissue sample. To make it more convenient from the files size point of view, we have cropped a portion of TMA slide and its deconvoluted channel in Data folder, and will run the pipeline for this small image. One can follow the same steps for whole TMA.  
+
+These are the steps implemented directly in pipeline.scala:
 
 1. Make a mask of deconvoluted brown channel. There is a MATLAB script called directly in Anduril pipeline to make a mask of deconvoluted channel for quantification step. (mask.sh, mask_fun.m, mask_run.m functions are being called in this step)
 
