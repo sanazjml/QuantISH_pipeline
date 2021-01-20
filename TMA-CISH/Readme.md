@@ -59,7 +59,7 @@ NONHIER_5_VAL_1 with 3 tiles (dat)..
 ```
 
 
-Consequnetly, to extract the low resolution image for next step of analysis you just need to run. Here, we extract the HIER_0_VAL_8 layer via: 
+Consequnetly, to extract the low resolution image for next step of analysis you just need to run the following code. Here, we extract the HIER_0_VAL_8 layer via: 
 
 ```
 ./mrxsdump.py  -g "HIER_0_VAL_8"  -O CCNE1_TMA_lr.png -P  CCNE1_TMA.mrxs
@@ -86,9 +86,11 @@ and also "CCNE1_TMA_lr.png" image is the low resolution one saved for downstream
 
 
 #### - cropTMA.m
-In order to extract the TMA spots from the whole slide image, we implemented a MATLAB script based on the HistoCrop method [https://github.com/jopo666/HistoCrop]. The expected number of rows and columns in the TMA spot matrix is first prespecified in the code. Afterwards, the program will segment each TMA spot in the matrix. A graphical user interface allows adding, removing, or editing any spots that are not correctly detected. Finally, the script exports the bounding box coordinates of each TMA spot as a csv file, which is used to crop each TMA spot into a separate image file for downstream analyses. You should just change the "th" and "tw" in the Matlab script based on height and width of high resolution image. There are other MATLAB function in the HistoCrop folder as dependencies of cropTMA.m function. 
+In order to extract the TMA spots from the whole slide image, we implemented a MATLAB script based on the HistoCrop method [https://github.com/jopo666/HistoCrop]. Please refer to Histocrop github page for full documentation. The expected number of rows and columns in the TMA spot matrix is first prespecified in the code. Afterwards, the program will segment each TMA spot in the matrix. A graphical user interface allows adding, removing, or editing any spots that are not correctly detected. Finally, the script exports the bounding box coordinates of each TMA spot as a csv file, which is used to crop each TMA spot into a separate image file for downstream analyses. You should just change the "th" and "tw" in the Matlab script based on height and width of high resolution image. There are other MATLAB function in the HistoCrop folder as dependencies of cropTMA.m function. 
 
-As here we have just one TMA in the slide, we would have one cropped TMA coordinates as the output:
+As here we have just one TMA in the slide, we would have one cropped TMA coordinates as the output. Here is a snapshot of output spot:
+
+
 
 
 
