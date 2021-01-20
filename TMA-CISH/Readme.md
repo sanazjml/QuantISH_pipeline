@@ -108,7 +108,7 @@ This script is written in ImageJ macro language and implements a color separatio
  ![alt text](https://github.com/sanazjml/QuantISH_pipeline/blob/main/TMA-CISH/imagej.png)  
 
 
-Hence, here is the output of imagej color deconvolution for the spot of interest: 
+Hence, here is the output of imagej color deconvolution for the spot of interest:
 
  ![alt text](https://github.com/sanazjml/QuantISH_pipeline/blob/main/TMA-CISH/CCNE1_TMA_HIER_0_VAL_0_color_channel.png)
 
