@@ -155,8 +155,10 @@ These are the steps implemented directly in pipeline.scala:
 ### Downstream analysis  
 
 - Otsu thresholding has been done for two class classification of positive control intensities to filter out unreliable spots. (use Otsu.R  script)    
-- Average expression and expression variability can be quantified using Downstream_CISH.R script. Actually the csv outputs of the pipeline.scala contains all information needed for quantification. However, files should be aggeragated and mapped to the patients' annotation resulting in a single file containing the spot IDs and patients names as well (like a table named CCNE1 in script). Then Downstream_CISH.R script can be used to quantify average expression and expression variability for each individual spot and patient directly.  
-- Applying ANOVA on nested factorial linear models to perform variance analysis has been done via lmnf.R. 
+- Average expression and expression variability can be quantified using Downstream_CISH.R script. Actually the csv outputs of the pipeline.scala contains all information needed for quantification. However, files should be aggeragated and mapped to the patients' annotation resulting in a single file containing the spot IDs and patients names as well (like a table named CCNE1 in script which has added TMA annotations to CCNE1_TMA_quantified.csv  file containing patients and tissue information). Then Downstream_CISH.R script can be used to quantify average expression and expression variability for each individual spot and patient directly.  
+- Applying ANOVA on nested factorial linear models to perform variance analysis has been done via lmnf.R.  
+
+As we just have one TMA spot here without patients and tissue information, we have not presented downstream analysis. But, following the script will provide avergae expression and expression variability when you have extracted multiple TMAs as well. 
 
 
 
