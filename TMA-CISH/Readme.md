@@ -122,16 +122,31 @@ Hence, here is the output of imagej color deconvolution for the spot of interest
 
 This scala scripts contains the main body of the QuantISH pipeline. It receives the cropped TMA spots and separated brown color channel as inputs, and after implementing following steps, it quantifies cell type-specific target RNA inside each tissue sample. To make it more convenient from the files size point of view, we have cropped a portion of TMA slide and its deconvoluted channel in Data folder, and will run the pipeline for this small image. One can follow the same steps for whole TMA.  
 
+```
+./pipeline.scala
+```
+
 These are the steps implemented directly in pipeline.scala:
 
 1. Make a mask of deconvoluted brown channel. There is a MATLAB script called directly in Anduril pipeline to make a mask of deconvoluted channel for quantification step. (mask.sh, mask_fun.m, mask_run.m functions are being called in this step)
 
+<img src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/TMA-CISH/result_pipeline/CCNE1_TMA_mask.png" data-canonical-src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/TMA-CISH/result_pipeline/CCNE1_TMA_mask.png" width="600" height="600" />    
+
+
 2. Cleaning demultiplexing artifacts. This step applies cleaning demultiplexing artifacts automatically from the original TMA using the resynthesizer textural synthesis plug-in in GNU Image Manipulation Program. The steps are written in “inpainting.py” in python-fu scripting language, which allows fully automatic batch processing for each TMA spot in the analysis. 
 
+<img src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/TMA-CISH/result_pipeline/CCNE1_TMA_filled.png" data-canonical-src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/TMA-CISH/result_pipeline/CCNE1_TMA_filled.png" width="600" height="600" />    
 
-3. Cell segmentation . The pipeline calls CellProfiler software and the saved segment.cpproj in which the non-default parameters for the images in analysis were determined experimentally. (segment.cpproj and segment.sh are called in this step)
+
+
+3. Cell segmentation . The pipeline calls CellProfiler software and the saved segment.cpproj in which the non-default parameters for the images in analysis were determined experimentally. (segment.cpproj and segment.sh are called in this step)  
+
+<img src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/TMA-CISH/result_pipeline/CCNE1_TMA_segmented.png" data-canonical-src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/TMA-CISH/result_pipeline/CCNE1_TMA_segmented.png" width="600" height="600" />  
+
 
 4. Cell type classification. Anduril pipeline uses quadratic classifier for cell type classification. We trained a supervised quadratic classifier using 360 cells with the area, the mean nucleus stain intensity, the eccentricity, and the perimeter-to-area ratio of each segmented object and desired cell types. For decsription about classification approach refer to the manuscript. (classify.m, classify_run.m, classify.sh, convfft.m, rgb2label.m are called in this step, 'training_image.mat' is the training data needed for classification) 
+
+
 
 5. RNA signals quantification. Eventually, the RNA signals are quantified using the isolated channel for each individual TMA in color separation step. (quantify_run.m, quantify.sh and quantify.m functions are called in this step). The quantification results in each indivdual cell of each TMA will be saved as a csv file. This files contains the segment Id, class type, SumIntensity and Area of cell in order to do any normalization of interest.
 
