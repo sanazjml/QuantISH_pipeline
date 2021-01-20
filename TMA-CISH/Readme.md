@@ -91,7 +91,7 @@ In order to extract the TMA spots from the whole slide image, we implemented a M
 As here we have just one TMA in the slide, we would have one cropped TMA coordinates as the output. Here is a snapshot of output spot:
 
 
-
+ ![alt text](https://github.com/sanazjml/Community_detection/blob/master/graph%20of%205%20Mb%20base%20pair%20Hi-C%20data.png)  
 
 
 
