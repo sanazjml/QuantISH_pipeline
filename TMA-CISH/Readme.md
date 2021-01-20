@@ -86,13 +86,13 @@ and also "CCNE1_TMA_lr.png" image is the low resolution one saved for downstream
 
 
 #### - cropTMA.m
-In order to extract the TMA spots from the whole slide image, we implemented a MATLAB script based on the HistoCrop method [https://github.com/jopo666/HistoCrop]. Please refer to Histocrop github page for full documentation. The expected number of rows and columns in the TMA spot matrix is first prespecified in the code. Afterwards, the program will segment each TMA spot in the matrix. A graphical user interface allows adding, removing, or editing any spots that are not correctly detected. Finally, the script exports the bounding box coordinates of each TMA spot as a csv file, which is used to crop each TMA spot into a separate image file for downstream analyses. You should just change the "th" and "tw" in the Matlab script based on height and width of high resolution image. There are other MATLAB function in the HistoCrop folder as dependencies of cropTMA.m function. 
+In order to extract the TMA spots from the whole slide image, we implemented a MATLAB script based on the HistoCrop method [https://github.com/jopo666/HistoCrop]. Please refer to Histocrop github page for full documentation. The expected number of rows and columns in the TMA spot matrix is first prespecified in the code. Afterwards, the program will segment each TMA spot in the matrix. A graphical user interface allows adding, removing, or editing any spots that are not correctly detected. Finally, the script exports the bounding box coordinates of each TMA spot as a csv file, which is used to crop each TMA spot into a separate image file for downstream analyses. You should just change the "th" and "tw" in the Matlab script based on height and width of high resolution image. There are other MATLAB function in the HistoCrop folder as dependencies of cropTMA.m function.   
 
 #### - crop_spots_all.sh
 
 This bash script cuts the spots of a TMA slide using the coordinates obtained in previous script. Make sure the directory in which the csv files are present, are truly referred in crop_spots_all.sh script. 
 
-As here we have just one TMA in the slide, we would have one cropped TMA coordinates as the output. Here is a snapshot of output spot (note that this is not image file for downstream analysis. We will continue with a portion of cropped TMA spot for downstream analysis):
+As here we have just one TMA in the slide, we would have one cropped TMA coordinates as the output. Here is a snapshot of output spot (note that this is not image file for downstream analysis. We will continue with a portion of cropped TMA spot for downstream analysis):  
 
 
  
