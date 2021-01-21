@@ -18,10 +18,16 @@ Make sure that the required softwared are installed on your computer. Besides, a
 
 ## Pre-processing
 ### Caseviewer
-We have used CaseViewer software (version 2.3.0) to read the MRXS immunoflorescence image, and separate its different channels as DAPI staining, and fluorescein (FITC 38 HE), Cyanine 3 (TRITC 48 HE), and Cyanine 5 (Cy5) channels for each target RNA to be quantified. The output will be saved as tiff format images.   
+We have used CaseViewer software (version 2.3.0) to read the MRXS immunoflorescence image, and separate its different channels as DAPI staining, and fluorescein (FITC 38 HE), Cyanine 3 (TRITC 48 HE), and Cyanine 5 (Cy5) channels for each target RNA to be quantified. The output will be saved as tiff format images.     
 
+<img src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/Whole%20Slide-FISH/Whole_slide_image.png" data-canonical-src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/Whole%20Slide-FISH/Whole_slide_image.png" width="700" height="600" />  
 
-(https://github.com/sanazjml/QuantISH_pipeline/blob/main/Whole%20Slide-FISH/Whole_slide_image.png)
+These are the separated channels by Caseviewer:  
+<img src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/Whole%20Slide-FISH/Whole_slide_dapi.png" data-canonical-src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/Whole%20Slide-FISH/Whole_slide_dapi.png" width="300" height="300" /> 
+<img src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/Whole%20Slide-FISH/WHole_slide_Cy5.png" data-canonical-src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/Whole%20Slide-FISH/WHole_slide_Cy5.png" width="300" height="300" /> 
+<img src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/Whole%20Slide-FISH/Whole_slide_FITC.png" data-canonical-src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/Whole%20Slide-FISH/Whole_slide_FITC.png" width="300" height="300" /> 
+<img src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/Whole%20Slide-FISH/Whole_slide_TRITC.png" data-canonical-src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/Whole%20Slide-FISH/Whole_slide_TRITC.png" width="300" height="300" /> 
+
 
 
 ## Main analysis
@@ -33,7 +39,13 @@ This scala scripts contains the main body of the QuantISH pipeline. It receives 
 1. Crop DAPI image into four smaller tiles. As whole slide images are too big to be input of Cellprofiler segmentation, we implement a MATLAB script in Anduril pipeline to crop the DAPI staining into four. (crop.sh, crop_wsi.m, crop_run.m functions are being called in this step)
 
 
+
 2. Cell segmentation . The pipeline calls CellProfiler software and the saved segment.cpproj in which the non-default parameters for the images in analysis were determined experimentally. (segment.cpproj and segment.sh are called in this step)
+<img src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/Whole%20Slide-FISH/segment1.png" data-canonical-src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/Whole%20Slide-FISH/segment1.png" width="300" height="300" />   
+<img src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/Whole%20Slide-FISH/segment2.png" data-canonical-src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/Whole%20Slide-FISH/segment1.png" width="300" height="300" />   
+<img src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/Whole%20Slide-FISH/segment3.png" data-canonical-src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/Whole%20Slide-FISH/segment1.png" width="300" height="300" />  
+<img src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/Whole%20Slide-FISH/segment1.png" data-canonical-src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/Whole%20Slide-FISH/segment4.png" width="300" height="300" />   
+
 
 3. Merge segmented images back. Using a MATLAB script called in Anduril, the segmented images are being merged back together for downsctream analysis (merge.sh, merge_run.m and merge_wsi.m are called in this step)
 
