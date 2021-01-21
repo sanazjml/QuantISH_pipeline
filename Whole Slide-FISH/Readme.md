@@ -41,9 +41,9 @@ This scala scripts contains the main body of the QuantISH pipeline. It receives 
 
 
 2. Cell segmentation . The pipeline calls CellProfiler software and the saved segment.cpproj in which the non-default parameters for the images in analysis were determined experimentally. (segment.cpproj and segment.sh are called in this step)
-<img src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/Whole%20Slide-FISH/segment1.png" data-canonical-src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/Whole%20Slide-FISH/segment1.png" width="300" height="300" />   
-<img src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/Whole%20Slide-FISH/segment2.png" data-canonical-src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/Whole%20Slide-FISH/segment1.png" width="300" height="300" />   
-<img src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/Whole%20Slide-FISH/segment3.png" data-canonical-src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/Whole%20Slide-FISH/segment1.png" width="300" height="300" />  
+<img src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/Whole%20Slide-FISH/segment1.png" data-canonical-src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/Whole%20Slide-FISH/segment1.png" width="300" height="300" />
+<img src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/Whole%20Slide-FISH/segment2.png" data-canonical-src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/Whole%20Slide-FISH/segment1.png" width="300" height="300" />
+<img src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/Whole%20Slide-FISH/segment3.png" data-canonical-src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/Whole%20Slide-FISH/segment1.png" width="300" height="300" />
 <img src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/Whole%20Slide-FISH/segment1.png" data-canonical-src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/Whole%20Slide-FISH/segment4.png" width="300" height="300" />   
 
 
