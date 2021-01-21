@@ -46,14 +46,18 @@ This scala scripts contains the main body of the QuantISH pipeline. It receives 
 <img src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/Whole%20Slide-FISH/segment1.png" data-canonical-src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/Whole%20Slide-FISH/segment4.png" width="200" height="200" />   
 
 
-3. Merge segmented images back. Using a MATLAB script called in Anduril, the segmented images are being merged back together for downstream analysis (merge.sh, merge_run.m and merge_wsi.m are called in this step)
+3. Merge segmented images back. Using a MATLAB script called in Anduril, the segmented images are being merged back together for downstream analysis (merge.sh, merge_run.m and merge_wsi.m are called in this step)  
 
-
-
+<img src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/Whole%20Slide-FISH/merged.png" data-canonical-src="https://github.com/sanazjml/QuantISH_pipeline/blob/main/Whole%20Slide-FISH/merged.png" width="700" height="600" /> 
 
 4. Cell type classification. Anduril pipeline uses quadratic classifier for DAPI staining cell type classification. We trained a supervised quadratic classifier using 402 cells with the area, mean nucleus stain intensity and the eccentricity of each segmented object and desired cell types. (classify.m, classify_run.m, classify.sh, convfft.m, rgb2label.m are called in this step, ‘training_data.mat’ contains the training data needed in classification) 
 
+- The cell classification results are now saved in classes.csv
+
 5. RNA signals quantification. Cross-channel fluorescence bleed of Cy5, FITC and TRITC staining was reduced by finding a suitable basis near for the intensity data of all pixels near the principal axes using power iteration. This procedure is being done through running ‘princompgen.m’ in quantification step. Next, the fluorescence intensity signal was quantified using the negative response of a Laplacian of Gaussian filter with standard deviation of unity (quantify_run.m, quantify.sh and quantify.m functions are called in this step). Eventually, the quantification results in each indivdual cell of each TMA will be saved as a csv file. These files contain the segment Id, class type, SumIntensity of 3 channles including (Cy5, FITC and TRITC) and area of cell as well to do any normalization of interest.
+
+- The RNA quantification results are now saved in quantified.csv
+
 
 #### Downstream analysis
 
