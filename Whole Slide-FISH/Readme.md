@@ -21,6 +21,8 @@ Make sure that the required softwared are installed on your computer. Besides, a
 We have used CaseViewer software (version 2.3.0) to read the MRXS immunoflorescence image, and separate its different channels as DAPI staining, and fluorescein (FITC 38 HE), Cyanine 3 (TRITC 48 HE), and Cyanine 5 (Cy5) channels for each target RNA to be quantified. The output will be saved as tiff format images.   
 
 
+(https://github.com/sanazjml/QuantISH_pipeline/blob/main/Whole%20Slide-FISH/Whole_slide_image.png)
+
 
 ## Main analysis
 
