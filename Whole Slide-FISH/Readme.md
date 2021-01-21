@@ -13,7 +13,7 @@ CellProfiler software (version 3.1.8)
 Anduril2   
 
 ### Getting Started 
-Make sure that the required softwared are installed on your computer. Besides, as the pipline exploits the parallelisation in Anduril2 as a workflow platform for analyzing large data sets, you can install the Anduril on your own computer using instructions available in “https://www.anduril.org”.  
+Make sure that the required softwared are installed on your computer. Besides, as the pipline exploits the parallelisation in Anduril2 as a workflow platform for analyzing large data sets, you can install the Anduril on your own computer using instructions available in “https://www.anduril.org”. The example data will be provided upon request as whole slide images are too big to be analysed here. 
 
 
 ## Pre-processing
