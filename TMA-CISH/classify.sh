@@ -7,4 +7,4 @@ fi
        
 
 path="$(dirname "$0")"
-"$path/matlab-run.py" "$path/classify_run.m" src_spot="$1" src_segmented="$2" dest="$3"
+"$path/matlab-run.py" "$path/classify_run.m" src_spot="$1" src_segmented="$2" dest="$3" 
