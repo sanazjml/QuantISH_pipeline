@@ -2,7 +2,7 @@
 
 This repository contains the image analysis pipeline introduced in paper “QuantISH: RNA in situ hybridization image analysis pipeline to quantify cell type-specific target RNA expression and variability in tissue samples”.
 
-Here is the Whole Slide-FISH version of pipeline which quantifies cell type-specific target RNA in immunofluorescence stained whole slide images.
+Here is the Whole Slide-FISH version of pipeline which quantifies cell type-specific target RNA in immunofluorescence stained whole slide images. 
  
 
 ### Software requirements: 
