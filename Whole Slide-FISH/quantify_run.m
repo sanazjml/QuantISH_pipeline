@@ -1,6 +1,7 @@
 
 % read spot image
 %img= imread(src_spot);
+
 chan1= src_channel1;
 chan2= src_channel2;
 chan3= src_channel3;
